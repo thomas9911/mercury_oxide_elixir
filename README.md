@@ -17,7 +17,7 @@ The package can be installed by adding `mercury_oxide` to your list of dependenc
 ```elixir
 def deps do
   [
-    {:mercury_oxide, "~> 0.1.0"}
+    {:mercury_oxide, "~> 0.1.1"}
   ]
 end
 ```

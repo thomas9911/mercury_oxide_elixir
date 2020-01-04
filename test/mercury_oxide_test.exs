@@ -7,6 +7,11 @@ defmodule MercuryOxideTest do
              MercuryOxide.render("Liquid! {{num | minus: 2}}", [{"num", "15"}])
   end
 
+  test "render correctly, variable map" do
+    assert {:ok, "Liquid! 13"} ==
+             MercuryOxide.render("Liquid! {{data.num | minus: 2}}", [{"data", %{"num" => "15"}}])
+  end
+
   test "render correctly keyword" do
     assert {:ok, "Liquid! 13"} ==
              MercuryOxide.render("Liquid! {{num | minus: 2}}", num: "15")

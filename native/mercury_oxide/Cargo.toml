@@ -11,5 +11,6 @@ crate-type = ["dylib"]
 
 [dependencies]
 rustler = "0.21.0"
+serde_rustler = {git = "https://github.com/thomas9911/serde_rustler"}
 lazy_static = "1.0"
 liquid = "0.18"

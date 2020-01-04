@@ -5,6 +5,7 @@ extern crate liquid;
 use liquid::partials::{InMemorySource, LazyCompiler};
 use liquid::value::Value;
 use rustler::{Encoder, Env, Error, Term};
+use serde_rustler::from_term;
 
 mod atoms {
     rustler_atoms! {
@@ -26,7 +27,7 @@ rustler::rustler_export_nifs! {
 
 fn render<'a>(env: Env<'a>, args: &[Term<'a>]) -> Result<Term<'a>, Error> {
     let template: String = args[0].decode()?;
-    let var_list: Vec<(String, String)> = args[1].decode()?;
+    let var_list: Vec<(String, Value)> = from_term(args[1])?;
     let partials: Vec<(String, String)> =
         args.get(2).unwrap_or(&Term::list_new_empty(env)).decode()?;
 
@@ -47,7 +48,7 @@ fn render<'a>(env: Env<'a>, args: &[Term<'a>]) -> Result<Term<'a>, Error> {
 
     let mut globals = liquid::value::Object::new();
     for (k, v) in var_list {
-        globals.insert(k.into(), Value::Scalar(v.into()));
+        globals.insert(k.into(), v);
     }
 
     let output = match template.render(&globals) {

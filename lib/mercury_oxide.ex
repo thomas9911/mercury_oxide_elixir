@@ -17,6 +17,12 @@ defmodule MercuryOxide do
   {:ok, "Hello Person, what a nice day"}
   ```
 
+  ```
+  iex> partial = "Hello {{ guest.name | capitalize }}"
+  ...> MercuryOxide.render("{% include 'greeting' %}, what a nice day", [guest: %{"name" => "person"}], [greeting: partial])
+  {:ok, "Hello Person, what a nice day"}
+  ```
+
   """
   alias MercuryOxide.Native
 
