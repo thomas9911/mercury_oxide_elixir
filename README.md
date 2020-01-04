@@ -1,7 +1,10 @@
 # MercuryOxide
-## a NIF for Liquid-Rust
+## a NIF for [Liquid-Rust](https://github.com/cobalt-org/liquid-rust)
 
 MercuryOxide a Rusty Liquid
+
+Renders Liquid templates using [Liquid](https://github.com/cobalt-org/liquid-rust)
+
 
 ## To build:
 Have rust and cargo installed
