@@ -1,6 +1,6 @@
 [package]
 name = "mercury_oxide"
-version = "0.1.0"
+version = "0.1.1"
 authors = []
 edition = "2018"
 
@@ -11,6 +11,6 @@ crate-type = ["dylib"]
 
 [dependencies]
 rustler = "0.21.0"
-serde_rustler = {git = "https://github.com/thomas9911/serde_rustler"}
+serde_rustler = {git = "https://github.com/thomas9911/serde_rustler", branch = "0_21"}
 lazy_static = "1.0"
 liquid = "0.18"
