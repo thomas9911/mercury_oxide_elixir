@@ -57,7 +57,7 @@ defmodule MercuryOxide.MixProject do
         "README.md",
         "LICENSE"
       ],
-      links: %{"Github" => "https://github.com/thomas9911/mercury_oxide"}
+      links: %{"Github" => "https://github.com/thomas9911/mercury_oxide_elixir"}
     ]
   end
 
