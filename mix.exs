@@ -4,8 +4,8 @@ defmodule MercuryOxide.MixProject do
   def project do
     [
       app: :mercury_oxide,
-      version: "0.1.1",
-      elixir: ">= 1.7.0",
+      version: "0.2.0",
+      elixir: ">= 1.12.0",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       compilers: [:rustler] ++ Mix.compilers(),
@@ -29,7 +29,7 @@ defmodule MercuryOxide.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:rustler, "~> 0.21.0"},
+      {:rustler, "~> 0.23.0"},
       {:ex_doc, ">= 0.1.0", only: :dev, runtime: false}
     ]
   end
